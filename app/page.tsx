@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -85,6 +86,7 @@ export default function Home() {
                 <div className="font-display text-xl font-semibold tracking-tight">
                   SolarNova
                 </div>
+
                 <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-emerald-300">
                   Clean Energy
                 </div>
@@ -114,12 +116,13 @@ export default function Home() {
                 Impact
               </button>
 
-              <button
-                onClick={() => scrollTo("contact")}
+              {/* Get Started → Contact Page */}
+              <a
+                href="/contact"
                 className="rounded-full bg-[#d9ff43] px-5 py-2.5 text-sm font-semibold text-[#06110d] transition hover:-translate-y-0.5"
               >
                 Get Started
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -161,12 +164,13 @@ export default function Home() {
                   Impact
                 </button>
 
-                <button
-                  onClick={() => scrollTo("contact")}
+                {/* Mobile Get Started → Contact Page */}
+                <a
+                  href="/contact"
                   className="mt-2 rounded-xl bg-[#d9ff43] px-4 py-3 font-semibold text-[#06110d]"
                 >
                   Get Started
-                </button>
+                </a>
               </div>
             </motion.div>
           )}
@@ -191,6 +195,7 @@ export default function Home() {
           >
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-2">
               <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+
               <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-300">
                 Powering a cleaner tomorrow
               </span>
@@ -200,7 +205,9 @@ export default function Home() {
               Turn sunlight
               <br />
               into{" "}
-              <span className="italic text-[#d9ff43]">possibility.</span>
+              <span className="italic text-[#d9ff43]">
+                possibility.
+              </span>
             </h1>
 
             <p className="mt-7 max-w-xl text-base leading-7 text-white/60 md:text-lg">
@@ -233,6 +240,7 @@ export default function Home() {
                   <div className="font-display text-2xl text-[#d9ff43] md:text-3xl">
                     {stat.value}
                   </div>
+
                   <div className="mt-1 text-[10px] uppercase tracking-wider text-white/40">
                     {stat.label}
                   </div>
@@ -294,7 +302,10 @@ export default function Home() {
       </section>
 
       {/* ================= SOLUTIONS ================= */}
-      <section id="solutions" className="relative bg-[#f5f3eb] py-24 text-[#102d2a]">
+      <section
+        id="solutions"
+        className="relative bg-[#f5f3eb] py-24 text-[#102d2a]"
+      >
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-14 max-w-2xl">
             <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-emerald-700">
@@ -336,7 +347,10 @@ export default function Home() {
 
               <div className="p-7">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="font-display text-3xl">Solar Home</h3>
+                  <h3 className="font-display text-3xl">
+                    Solar Home
+                  </h3>
+
                   <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
                     <ArrowRight size={18} />
                   </div>
@@ -375,7 +389,9 @@ export default function Home() {
 
               <div className="p-7">
                 <div className="mb-4 flex items-center justify-between">
-                  <h3 className="font-display text-3xl">Solar Farm</h3>
+                  <h3 className="font-display text-3xl">
+                    Solar Farm
+                  </h3>
 
                   <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
                     <ArrowRight size={18} />
@@ -398,7 +414,10 @@ export default function Home() {
       </section>
 
       {/* ================= TECHNOLOGY ================= */}
-      <section id="technology" className="solar-background bg-[#06110d] py-24">
+      <section
+        id="technology"
+        className="solar-background bg-[#06110d] py-24"
+      >
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* Image */}
@@ -426,7 +445,10 @@ export default function Home() {
                     </div>
 
                     <div>
-                      <div className="font-semibold">Smart Solar System</div>
+                      <div className="font-semibold">
+                        Smart Solar System
+                      </div>
+
                       <div className="mt-1 text-xs text-white/50">
                         Efficient. Intelligent. Sustainable.
                       </div>
@@ -449,7 +471,9 @@ export default function Home() {
               <h2 className="mt-4 font-display text-4xl leading-tight md:text-6xl">
                 Built around
                 <br />
-                <span className="italic text-[#d9ff43]">your energy.</span>
+                <span className="italic text-[#d9ff43]">
+                  your energy.
+                </span>
               </h2>
 
               <p className="mt-6 leading-7 text-white/55">
@@ -510,7 +534,9 @@ export default function Home() {
               <h2 className="mt-4 max-w-2xl font-display text-5xl leading-none md:text-7xl">
                 The future is
                 <br />
-                <span className="italic">already shining.</span>
+                <span className="italic">
+                  already shining.
+                </span>
               </h2>
 
               <p className="mt-7 max-w-xl text-lg leading-8 text-[#102d2a]/70">
@@ -543,6 +569,7 @@ export default function Home() {
                 <div className="font-display text-3xl text-[#d9ff43]">
                   24/7
                 </div>
+
                 <div className="mt-1 text-xs text-white/50">
                   Energy monitoring
                 </div>
@@ -553,7 +580,10 @@ export default function Home() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section id="contact" className="relative bg-[#06110d] py-28">
+      <section
+        id="contact"
+        className="relative bg-[#06110d] py-28"
+      >
         <div className="mx-auto max-w-5xl px-5 text-center md:px-8">
           <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-[#ffbd18] text-[#06110d] shadow-[0_0_60px_rgba(255,189,24,0.25)]">
             <Sun size={30} />
@@ -562,7 +592,9 @@ export default function Home() {
           <h2 className="font-display text-5xl leading-none md:text-7xl">
             Ready to make the
             <br />
-            <span className="italic text-[#d9ff43]">switch?</span>
+            <span className="italic text-[#d9ff43]">
+              switch?
+            </span>
           </h2>
 
           <p className="mx-auto mt-7 max-w-xl leading-7 text-white/50">
@@ -571,8 +603,10 @@ export default function Home() {
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+            {/* Talk To Us → Contact Page */}
             <a
-              href="mailto:hello@solarnova.com"
+              href="/contact"
               className="solar-button inline-flex items-center gap-2 rounded-full bg-[#d9ff43] px-7 py-4 font-semibold text-[#06110d]"
             >
               Talk To Us
@@ -597,7 +631,9 @@ export default function Home() {
               <Sun size={19} />
             </div>
 
-            <span className="font-display text-lg">SolarNova</span>
+            <span className="font-display text-lg">
+              SolarNova
+            </span>
           </div>
 
           <p className="text-xs text-white/30">
