@@ -2,7 +2,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight, Award, Users } from "lucide-react";
 
 const carouselImages = [
   "/solar/Solar Rooftop.jpg",
@@ -32,33 +33,34 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#06110d] text-[#f5f3eb]">
-      {/* Navbar */}
-      <nav className="border-b border-white/10 bg-[#06110d]/95">
+    <main className="min-h-screen bg-[#03120e] text-white">
+      {/* ================= NAVBAR ================= */}
+      <nav className="border-b border-white/10 bg-[#061812]/95 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 md:px-8">
-          <a href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#d9ff43] text-xl text-[#06110d]">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#b9ff68] text-xl text-[#092016]">
               ☀
             </div>
 
             <div>
               <div className="text-xl font-semibold">SolarNova</div>
-              <div className="mt-1 text-[9px] uppercase tracking-[0.25em] text-emerald-300">
+
+              <div className="mt-1 text-[9px] uppercase tracking-[0.25em] text-[#b9ff68]">
                 Clean Energy
               </div>
             </div>
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/"
-            className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/70 transition hover:border-[#d9ff43] hover:text-[#d9ff43]"
+            className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/70 transition hover:border-[#b9ff68] hover:text-[#b9ff68]"
           >
             Back To Home
-          </a>
+          </Link>
         </div>
       </nav>
 
-      {/* Top Image */}
+      {/* ================= TOP IMAGE ================= */}
       <section className="w-full">
         <div className="h-[280px] w-full overflow-hidden md:h-[420px]">
           <img
@@ -66,15 +68,17 @@ export default function ContactPage() {
             alt="Solar panels"
             className="h-full w-full object-cover"
           />
+
+          <div className="pointer-events-none absolute left-0 right-0 h-[280px] -mt-[280px] bg-gradient-to-t from-[#03120e]/70 via-transparent to-transparent md:h-[420px] md:-mt-[420px]" />
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* ================= CONTACT SECTION ================= */}
       <section className="mx-auto w-full max-w-7xl px-5 py-20 md:px-8">
         <div className="grid w-full gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
           {/* Left Content */}
           <div className="flex max-w-2xl flex-col justify-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d9ff43]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9ff68]">
               Get In Touch
             </p>
 
@@ -129,9 +133,9 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="rounded-3xl border border-white/10 bg-[#102d2a] p-6 md:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d9ff43]">
+          {/* ================= CONTACT FORM ================= */}
+          <div className="rounded-3xl border border-white/10 bg-[#071b15] p-6 shadow-2xl md:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9ff68]">
               Contact Us
             </p>
 
@@ -156,7 +160,7 @@ export default function ContactPage() {
                   name="Name"
                   required
                   placeholder="Enter your full name"
-                  className="w-full rounded-xl border border-white/10 bg-[#06110d] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#d9ff43]"
+                  className="w-full rounded-xl border border-white/10 bg-[#03120e] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#b9ff68]"
                 />
               </div>
 
@@ -171,7 +175,7 @@ export default function ContactPage() {
                   name="Email"
                   required
                   placeholder="Enter your email address"
-                  className="w-full rounded-xl border border-white/10 bg-[#06110d] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#d9ff43]"
+                  className="w-full rounded-xl border border-white/10 bg-[#03120e] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#b9ff68]"
                 />
               </div>
 
@@ -186,7 +190,7 @@ export default function ContactPage() {
                   name="Phone"
                   required
                   placeholder="Enter your phone number"
-                  className="w-full rounded-xl border border-white/10 bg-[#06110d] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#d9ff43]"
+                  className="w-full rounded-xl border border-white/10 bg-[#03120e] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#b9ff68]"
                 />
               </div>
 
@@ -201,7 +205,7 @@ export default function ContactPage() {
                   name="Location"
                   required
                   placeholder="Enter your city / location"
-                  className="w-full rounded-xl border border-white/10 bg-[#06110d] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#d9ff43]"
+                  className="w-full rounded-xl border border-white/10 bg-[#03120e] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#b9ff68]"
                 />
               </div>
 
@@ -215,7 +219,7 @@ export default function ContactPage() {
                   name="Solar Requirement"
                   required
                   defaultValue=""
-                  className="w-full rounded-xl border border-white/10 bg-[#06110d] px-4 py-3.5 text-sm text-white outline-none transition focus:border-[#d9ff43]"
+                  className="w-full rounded-xl border border-white/10 bg-[#03120e] px-4 py-3.5 text-sm text-white outline-none transition focus:border-[#b9ff68]"
                 >
                   <option value="" disabled>
                     Select your requirement
@@ -254,14 +258,14 @@ export default function ContactPage() {
                   required
                   rows={4}
                   placeholder="Tell us about your solar requirement..."
-                  className="w-full resize-none rounded-xl border border-white/10 bg-[#06110d] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#d9ff43]"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-[#03120e] px-4 py-3.5 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-[#b9ff68]"
                 />
               </div>
 
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full rounded-full bg-[#d9ff43] px-6 py-4 font-semibold text-[#06110d] transition hover:-translate-y-0.5 hover:bg-[#e4ff70]"
+                className="w-full rounded-full bg-[#b9ff68] px-6 py-4 font-semibold text-[#092016] transition hover:-translate-y-0.5 hover:bg-[#5dff85]"
               >
                 Submit Enquiry
               </button>
@@ -270,12 +274,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA + Carousel */}
-      <section className="border-t border-white/10 bg-[#102d2a] px-5 py-20 md:py-24">
+      {/* ================= CTA + CAROUSEL ================= */}
+      <section className="border-t border-white/10 bg-[#0a2419] px-5 py-20 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-14 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           {/* CTA Text */}
           <div className="max-w-xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d9ff43]">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#b9ff68]">
               SolarNova
             </p>
 
@@ -288,17 +292,17 @@ export default function ContactPage() {
               SolarNova.
             </p>
 
-            <a
+            <Link
               href="/"
-              className="mt-8 inline-flex rounded-full bg-[#d9ff43] px-7 py-3.5 font-semibold text-[#06110d] transition hover:scale-105 hover:bg-[#e4ff70]"
+              className="mt-8 inline-flex rounded-full bg-[#b9ff68] px-7 py-3.5 font-semibold text-[#092016] transition hover:scale-105 hover:bg-[#5dff85]"
             >
               Explore SolarNova →
-            </a>
+            </Link>
           </div>
 
           {/* Carousel */}
           <div className="w-full min-w-0">
-            <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-[#06110d]">
+            <div className="relative w-full overflow-hidden rounded-3xl border border-white/10 bg-[#03120e]">
               <div className="relative aspect-[16/10] w-full sm:aspect-[16/9]">
                 <div
                   className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
@@ -318,35 +322,39 @@ export default function ContactPage() {
                         draggable="false"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#06110d]/70 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#03120e]/70 via-transparent to-transparent" />
                     </div>
                   ))}
                 </div>
 
+                {/* Previous */}
                 <button
                   type="button"
                   onClick={previousImage}
                   aria-label="Previous image"
-                  className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#06110d]/75 text-white backdrop-blur-md transition hover:scale-110 hover:border-[#d9ff43] hover:text-[#d9ff43] sm:left-4 sm:h-11 sm:w-11"
+                  className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#03120e]/75 text-white backdrop-blur-md transition hover:scale-110 hover:border-[#b9ff68] hover:text-[#b9ff68] sm:left-4 sm:h-11 sm:w-11"
                 >
                   <ChevronLeft size={20} />
                 </button>
 
+                {/* Next */}
                 <button
                   type="button"
                   onClick={nextImage}
                   aria-label="Next image"
-                  className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#06110d]/75 text-white backdrop-blur-md transition hover:scale-110 hover:border-[#d9ff43] hover:text-[#d9ff43] sm:right-4 sm:h-11 sm:w-11"
+                  className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#03120e]/75 text-white backdrop-blur-md transition hover:scale-110 hover:border-[#b9ff68] hover:text-[#b9ff68] sm:right-4 sm:h-11 sm:w-11"
                 >
                   <ChevronRight size={20} />
                 </button>
 
-                <div className="absolute bottom-4 left-4 z-10 rounded-full bg-[#06110d]/75 px-3 py-1.5 text-xs font-semibold backdrop-blur-md sm:bottom-5 sm:left-5 sm:px-4 sm:py-2">
+                {/* Counter */}
+                <div className="absolute bottom-4 left-4 z-10 rounded-full bg-[#03120e]/75 px-3 py-1.5 text-xs font-semibold backdrop-blur-md sm:bottom-5 sm:left-5 sm:px-4 sm:py-2">
                   {currentImage + 1} / {carouselImages.length}
                 </div>
               </div>
             </div>
 
+            {/* Dots */}
             <div className="mt-5 flex justify-center gap-2">
               {carouselImages.map((_, index) => (
                 <button
@@ -356,7 +364,7 @@ export default function ContactPage() {
                   onClick={() => setCurrentImage(index)}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     currentImage === index
-                      ? "w-8 bg-[#d9ff43]"
+                      ? "w-8 bg-[#b9ff68]"
                       : "w-2 bg-white/25 hover:bg-white/50"
                   }`}
                 />
@@ -366,47 +374,153 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 bg-[#06110d]">
+      {/* ================= FOOTER ================= */}
+      <footer className="border-t border-white/10 bg-[#020d0a]">
         <div className="mx-auto w-full max-w-7xl px-5 py-10 md:px-8">
-          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#d9ff43] text-xl text-[#06110d]">
-                ☀
+          <div className="grid gap-10 md:grid-cols-3">
+            {/* Brand */}
+            <div>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-3"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#b9ff68] text-xl text-[#092016]">
+                  ☀
+                </div>
+
+                <div>
+                  <div className="text-xl font-semibold">
+                    SolarNova
+                  </div>
+
+                  <div className="mt-1 text-[9px] uppercase tracking-[0.25em] text-[#b9ff68]">
+                    Clean Energy
+                  </div>
+                </div>
+              </Link>
+
+              <p className="mt-4 max-w-xs text-xs leading-6 text-white/35">
+                Practical solar solutions for homes, businesses and
+                large-scale energy projects.
+              </p>
+            </div>
+
+            {/* Explore */}
+            <div>
+              <div className="mb-4 text-[10px] uppercase tracking-[0.2em] text-[#b9ff68]">
+                Explore
               </div>
 
-              <div>
-                <div className="text-xl font-semibold">SolarNova</div>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                <Link
+                  href="/"
+                  className="text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Home
+                </Link>
 
-                <div className="mt-1 text-[9px] uppercase tracking-[0.25em] text-emerald-300">
-                  Clean Energy
-                </div>
+                <Link
+                  href="/solutions"
+                  className="text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Solutions
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  About
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Blog
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Contact
+                </Link>
               </div>
             </div>
 
-            <p className="text-center text-sm text-white/40 md:text-left">
-              Powering a cleaner, smarter and more sustainable future.
-            </p>
+            {/* Company */}
+            <div>
+              <div className="mb-4 text-[10px] uppercase tracking-[0.2em] text-[#b9ff68]">
+                Company
+              </div>
 
-            <a
-              href="/"
-              className="inline-flex items-center justify-center rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white/70 transition hover:border-[#d9ff43] hover:text-[#d9ff43]"
-            >
-              Back To Home
-            </a>
+              <div className="flex flex-col gap-3">
+                <Link
+                  href="/about/board-of-directors"
+                  className="flex items-center gap-2 text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  <Users className="h-3.5 w-3.5" />
+                  Board of Directors
+                </Link>
+
+                <Link
+                  href="/about/awards"
+                  className="flex items-center gap-2 text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  <Award className="h-3.5 w-3.5" />
+                  Awards & Certification
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="text-xs text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  About SolarNova
+                </Link>
+              </div>
+            </div>
           </div>
 
-          <div className="mt-8 border-t border-white/10 pt-6 text-center md:flex md:items-center md:justify-between md:text-left">
-            <p className="text-xs text-white/30">
-              © 2026 SolarNova. All rights reserved.
+          {/* Bottom Footer */}
+          <div className="mt-10 flex flex-col justify-between gap-3 border-t border-white/10 pt-6 md:flex-row md:items-center">
+            <p className="text-[11px] text-white/25">
+              © {new Date().getFullYear()} SolarNova. All rights reserved.
             </p>
 
-            <p className="mt-2 text-xs text-white/30 md:mt-0">
-              Clean energy for a brighter future.
-            </p>
+            <div className="flex flex-wrap gap-5">
+              <Link
+                href="/solutions"
+                className="text-[11px] text-white/30 transition hover:text-[#b9ff68]"
+              >
+                Solutions
+              </Link>
+
+              <Link
+                href="/about"
+                className="text-[11px] text-white/30 transition hover:text-[#b9ff68]"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/blog"
+                className="text-[11px] text-white/30 transition hover:text-[#b9ff68]"
+              >
+                Blog
+              </Link>
+
+              <Link
+                href="/contact"
+                className="text-[11px] text-white/30 transition hover:text-[#b9ff68]"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
     </main>
   );
 }
+

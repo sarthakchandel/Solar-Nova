@@ -636,23 +636,182 @@ export default function BoardOfDirectorsPage() {
       {/* FOOTER */}
       {/* ========================================================= */}
 
-      <footer className="border-t border-white/10 px-6 py-7 lg:px-8">
+      <footer className="border-t border-white/10 bg-[#020d0a]">
 
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 md:flex-row md:items-center">
+        <div className="mx-auto w-full max-w-7xl px-6 py-12 lg:px-8">
 
-          <div className="flex items-center gap-2">
+          <div className="grid gap-10 md:grid-cols-3">
 
-            <Sun className="h-4 w-4 text-lime-300" />
+            {/* BRAND */}
 
-            <span className="text-sm font-semibold">
-              Solar<span className="text-lime-300">Nova</span>
-            </span>
+            <div>
+
+              <Link href="/" className="flex items-center gap-3">
+
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-lime-300/30 bg-lime-300/10">
+                  <Sun className="h-4 w-4 text-lime-300" />
+                </div>
+
+                <div>
+                  <div className="text-base font-bold tracking-wide">
+                    Solar<span className="text-lime-300">Nova</span>
+                  </div>
+
+                  <div className="text-[8px] uppercase tracking-[0.22em] text-white/35">
+                    Clean Energy
+                  </div>
+                </div>
+
+              </Link>
+
+              <p className="mt-4 max-w-sm text-sm leading-6 text-white/35">
+                Building a smarter and more sustainable energy future through
+                clean solar solutions.
+              </p>
+
+            </div>
+
+            {/* EXPLORE */}
+
+            <div>
+
+              <h3 className="text-sm font-semibold text-white">
+                Explore
+              </h3>
+
+              <div className="mt-4 grid gap-3">
+
+                <Link
+                  href="/"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Home
+                </Link>
+
+                <Link
+                  href="/solutions"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Solutions
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  About
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Blog
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Contact
+                </Link>
+
+              </div>
+
+            </div>
+
+            {/* COMPANY */}
+
+            <div>
+
+              <h3 className="text-sm font-semibold text-white">
+                Company
+              </h3>
+
+              <div className="mt-4 grid gap-3">
+
+                <Link
+                  href="/about/board-of-directors"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Board of Directors
+                </Link>
+
+                <Link
+                  href="/about/awards"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Awards & Certification
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  About SolarNova
+                </Link>
+
+                <Link
+                  href="/solutions"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Our Solutions
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Get Started
+                </Link>
+
+              </div>
+
+            </div>
 
           </div>
 
-          <div className="text-[11px] text-white/25">
-            © {new Date().getFullYear()} SolarNova. Clean energy for a brighter
-            tomorrow.
+          {/* BOTTOM FOOTER */}
+
+          <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center">
+
+            <div className="text-[11px] text-white/25">
+              © {new Date().getFullYear()} SolarNova. Clean energy for a
+              brighter tomorrow.
+            </div>
+
+            <div className="flex flex-wrap gap-5">
+
+              <Link
+                href="/solutions"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Solutions
+              </Link>
+
+              <Link
+                href="/about"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/blog"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Blog
+              </Link>
+
+              <Link
+                href="/contact"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Contact
+              </Link>
+
+            </div>
+
           </div>
 
         </div>

@@ -177,7 +177,9 @@ export default function AwardsPage() {
 
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
               Recognition for
-              <span className="block text-lime-300">building a cleaner</span>
+              <span className="block text-lime-300">
+                building a cleaner
+              </span>
               future.
             </h1>
 
@@ -338,7 +340,10 @@ export default function AwardsPage() {
       </section>
 
       {/* CERTIFICATES */}
-      <section id="recognition" className="mx-auto max-w-7xl px-6 py-28 lg:px-8">
+      <section
+        id="recognition"
+        className="mx-auto max-w-7xl px-6 py-28 lg:px-8"
+      >
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.25em] text-lime-300">
@@ -347,7 +352,10 @@ export default function AwardsPage() {
 
             <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
               Credentials that
-              <span className="text-white/35"> support our journey.</span>
+              <span className="text-white/35">
+                {" "}
+                support our journey.
+              </span>
             </h2>
           </div>
 
@@ -403,7 +411,10 @@ export default function AwardsPage() {
 
             <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
               Milestones along the
-              <span className="text-lime-300"> SolarNova journey.</span>
+              <span className="text-lime-300">
+                {" "}
+                SolarNova journey.
+              </span>
             </h2>
           </div>
 
@@ -519,25 +530,196 @@ export default function AwardsPage() {
         </div>
       </section>
 
+      {/* ========================================================= */}
       {/* FOOTER */}
+      {/* ========================================================= */}
+
       <footer className="border-t border-white/10 bg-[#050d09]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-6 py-8 text-sm text-white/35 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div>
-            © {new Date().getFullYear()} SolarNova. All rights reserved.
+        <div className="mx-auto w-full max-w-7xl px-6 py-12 lg:px-8">
+
+          {/* FOOTER GRID */}
+
+          <div className="grid gap-10 md:grid-cols-3">
+
+            {/* BRAND */}
+
+            <div>
+              <Link href="/" className="flex items-center gap-3">
+
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-lime-300/30 bg-lime-300/10">
+                  <Sun className="h-4 w-4 text-lime-300" />
+                </div>
+
+                <div>
+                  <div className="text-base font-bold tracking-wide">
+                    Solar<span className="text-lime-300">Nova</span>
+                  </div>
+
+                  <div className="text-[8px] uppercase tracking-[0.22em] text-white/35">
+                    Clean Energy
+                  </div>
+                </div>
+
+              </Link>
+
+              <p className="mt-4 max-w-sm text-sm leading-6 text-white/35">
+                Building a smarter and more sustainable energy future through
+                clean solar solutions.
+              </p>
+            </div>
+
+            {/* EXPLORE */}
+
+            <div>
+              <h3 className="text-sm font-semibold text-white">
+                Explore
+              </h3>
+
+              <div className="mt-4 grid gap-3">
+
+                <Link
+                  href="/"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Home
+                </Link>
+
+                <Link
+                  href="/solutions"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Solutions
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  About
+                </Link>
+
+                <Link
+                  href="/blog"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Blog
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Contact
+                </Link>
+
+              </div>
+            </div>
+
+            {/* COMPANY */}
+
+            <div>
+              <h3 className="text-sm font-semibold text-white">
+                Company
+              </h3>
+
+              <div className="mt-4 grid gap-3">
+
+                <Link
+                  href="/about/board-of-directors"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Board of Directors
+                </Link>
+
+                <Link
+                  href="/about/awards"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Awards & Certification
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  About SolarNova
+                </Link>
+
+                <Link
+                  href="/solutions"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Our Solutions
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/45 transition hover:text-lime-300"
+                >
+                  Get Started
+                </Link>
+
+              </div>
+            </div>
+
           </div>
 
-          <div className="flex gap-6">
-            <Link href="/about" className="transition hover:text-lime-300">
-              About
-            </Link>
+          {/* BOTTOM FOOTER */}
 
-            <Link
-              href="/contact"
-              className="transition hover:text-lime-300"
-            >
-              Contact
-            </Link>
+          <div className="mt-10 flex flex-col justify-between gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center">
+
+            <div className="text-[11px] text-white/25">
+              © {new Date().getFullYear()} SolarNova. All rights reserved.
+            </div>
+
+            <div className="flex flex-wrap gap-5">
+
+              <Link
+                href="/solutions"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Solutions
+              </Link>
+
+              <Link
+                href="/about"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                About
+              </Link>
+
+              <Link
+                href="/about/board-of-directors"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Leadership
+              </Link>
+
+              <Link
+                href="/about/awards"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Awards
+              </Link>
+
+              <Link
+                href="/blog"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Blog
+              </Link>
+
+              <Link
+                href="/contact"
+                className="text-[11px] text-white/30 transition hover:text-lime-300"
+              >
+                Contact
+              </Link>
+
+            </div>
+
           </div>
+
         </div>
       </footer>
     </main>

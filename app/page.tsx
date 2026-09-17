@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -68,15 +67,15 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#06110d] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#03120e] text-white">
       {/* ================= NAVBAR ================= */}
       <header className="fixed left-0 right-0 top-0 z-50">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:px-5 sm:py-5 md:px-8">
           <nav
-            className={`glass-card relative z-[60] flex items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-300 sm:px-5 sm:py-4 ${
+            className={`relative z-[60] flex items-center justify-between rounded-2xl border px-4 py-3 backdrop-blur-xl transition-all duration-300 sm:px-5 sm:py-4 ${
               menuOpen
-                ? "border-emerald-400/20 bg-emerald-400/5 text-white backdrop-blur-xl"
-                : "bg-white/5"
+                ? "border-[#b9ff68]/20 bg-[#061812]/95"
+                : "border-white/10 bg-[#061812]/80"
             }`}
           >
             {/* Logo */}
@@ -84,7 +83,7 @@ export default function Home() {
               onClick={() => scrollTo("home")}
               className="flex min-w-0 items-center gap-2.5 sm:gap-3"
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#d9ff43] text-[#06110d] sm:h-10 sm:w-10">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#b9ff68] text-[#092016] sm:h-10 sm:w-10">
                 <Sun size={21} strokeWidth={2.5} />
               </div>
 
@@ -93,27 +92,26 @@ export default function Home() {
                   SolarNova
                 </div>
 
-                <div className="font-mono text-[8px] uppercase tracking-[0.2em] text-emerald-300 sm:text-[9px] sm:tracking-[0.25em]">
+                <div className="font-mono text-[8px] uppercase tracking-[0.2em] text-[#b9ff68] sm:text-[9px] sm:tracking-[0.25em]">
                   Clean Energy
                 </div>
               </div>
             </button>
 
-            {/* ================= DESKTOP NAVIGATION ================= */}
+            {/* Desktop Navigation */}
             <div className="hidden items-center gap-8 md:flex">
-              {/* Solutions */}
               <a
                 href="/solutions"
-                className="text-sm text-white/70 transition hover:text-[#d9ff43]"
+                className="text-sm text-white/70 transition hover:text-[#b9ff68]"
               >
                 Solutions
               </a>
 
-              {/* ================= ABOUT DROPDOWN ================= */}
+              {/* About Dropdown */}
               <div className="group relative">
                 <a
                   href="/about"
-                  className="flex items-center gap-1 text-sm text-white/70 transition hover:text-[#d9ff43]"
+                  className="flex items-center gap-1 text-sm text-white/70 transition hover:text-[#b9ff68]"
                 >
                   About
 
@@ -122,13 +120,11 @@ export default function Home() {
                   </span>
                 </a>
 
-                {/* Dropdown */}
                 <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="glass-card overflow-hidden rounded-2xl border border-white/10 bg-[#06110d]/95 p-2 shadow-2xl backdrop-blur-xl">
-                    {/* Board of Directors */}
+                  <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#061812]/95 p-2 shadow-2xl backdrop-blur-xl">
                     <a
                       href="/about/board-of-directors"
-                      className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
+                      className="block rounded-xl px-4 py-3 transition hover:bg-[#b9ff68]/10"
                     >
                       <div className="text-sm font-semibold text-white">
                         Board of Directors
@@ -139,10 +135,9 @@ export default function Home() {
                       </div>
                     </a>
 
-                    {/* Awards */}
                     <a
                       href="/about/awards"
-                      className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
+                      className="block rounded-xl px-4 py-3 transition hover:bg-[#b9ff68]/10"
                     >
                       <div className="text-sm font-semibold text-white">
                         Awards & Certification
@@ -156,29 +151,27 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Blog */}
               <a
                 href="/blog"
-                className="text-sm text-white/70 transition hover:text-[#d9ff43]"
+                className="text-sm text-white/70 transition hover:text-[#b9ff68]"
               >
                 Blog
               </a>
 
-              {/* Contact */}
               <a
                 href="/contact"
-                className="rounded-full bg-[#d9ff43] px-5 py-2.5 text-sm font-semibold text-[#06110d] transition hover:-translate-y-0.5"
+                className="rounded-full bg-[#b9ff68] px-5 py-2.5 text-sm font-semibold text-[#092016] transition hover:-translate-y-0.5 hover:bg-[#5dff85]"
               >
                 Get Started
               </a>
             </div>
 
-            {/* ================= MOBILE MENU BUTTON ================= */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 md:hidden ${
                 menuOpen
-                  ? "border-emerald-400/20 bg-emerald-400/10 text-[#d9ff43]"
+                  ? "border-[#b9ff68]/20 bg-[#b9ff68]/10 text-[#b9ff68]"
                   : "border-white/10 text-white"
               }`}
               aria-label="Toggle menu"
@@ -188,65 +181,59 @@ export default function Home() {
             </button>
           </nav>
 
-          {/* ================= MOBILE MENU ================= */}
+          {/* Mobile Menu */}
           {menuOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
-              className="glass-card relative z-[55] mt-2 rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-3 shadow-2xl backdrop-blur-xl md:hidden sm:p-4"
+              className="relative z-[55] mt-2 rounded-2xl border border-[#b9ff68]/20 bg-[#061812]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden sm:p-4"
             >
               <div className="flex flex-col gap-1.5">
-                {/* Solutions */}
                 <a
                   href="/solutions"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-[#b9ff68]/10 hover:text-[#b9ff68]"
                 >
                   Solutions
                 </a>
 
-                {/* About */}
                 <a
                   href="/about"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-[#b9ff68]/10 hover:text-[#b9ff68]"
                 >
                   About
                 </a>
 
-                {/* Board of Directors */}
                 <a
                   href="/about/board-of-directors"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-[#b9ff68]/10 hover:text-[#b9ff68]"
                 >
                   Board of Directors
                 </a>
 
-                {/* Awards */}
                 <a
                   href="/about/awards"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-[#b9ff68]/10 hover:text-[#b9ff68]"
                 >
                   Awards & Certification
                 </a>
 
-                {/* Blog */}
                 <a
                   href="/blog"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-[#b9ff68]/10 hover:text-[#b9ff68]"
                 >
                   Blog
                 </a>
 
-                {/* Contact */}
                 <a
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 rounded-xl bg-[#d9ff43] px-4 py-3 text-center font-semibold text-[#06110d] transition hover:brightness-95"
+                  className="mt-2 rounded-xl bg-[#b9ff68] px-4 py-3 text-center font-semibold text-[#092016] transition hover:bg-[#5dff85]"
                 >
                   Get Started
                 </a>
@@ -259,9 +246,9 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section
         id="home"
-        className="solar-background solar-grid relative flex min-h-screen items-center pt-32"
+        className="solar-background solar-grid relative flex min-h-screen items-center bg-[#03120e] pt-32"
       >
-        <div className="pointer-events-none absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-[#b9ff68]/10 blur-3xl" />
 
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 md:px-8 lg:grid-cols-2">
           {/* Hero Content */}
@@ -271,10 +258,10 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="relative z-10"
           >
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-4 py-2">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#b9ff68]/20 bg-[#b9ff68]/5 px-4 py-2">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-[#b9ff68]" />
 
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-300">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#b9ff68]">
                 Powering a cleaner tomorrow
               </span>
             </div>
@@ -283,7 +270,7 @@ export default function Home() {
               Turn sunlight
               <br />
               into{" "}
-              <span className="italic text-[#d9ff43]">
+              <span className="italic text-[#b9ff68]">
                 possibility.
               </span>
             </h1>
@@ -297,7 +284,7 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/solutions"
-                className="solar-button inline-flex items-center justify-center gap-2 rounded-full bg-[#d9ff43] px-6 py-3.5 font-semibold text-[#06110d]"
+                className="solar-button inline-flex items-center justify-center gap-2 rounded-full bg-[#b9ff68] px-6 py-3.5 font-semibold text-[#092016] transition hover:bg-[#5dff85]"
               >
                 Explore Solutions
                 <ArrowRight size={18} />
@@ -315,7 +302,7 @@ export default function Home() {
             <div className="mt-12 grid max-w-lg grid-cols-3 gap-4 border-t border-white/10 pt-6">
               {stats.map((stat) => (
                 <div key={stat.label}>
-                  <div className="font-display text-2xl text-[#d9ff43] md:text-3xl">
+                  <div className="font-display text-2xl text-[#b9ff68] md:text-3xl">
                     {stat.value}
                   </div>
 
@@ -337,7 +324,7 @@ export default function Home() {
             <div className="solar-orbit absolute -inset-8 hidden md:block" />
             <div className="solar-orbit-dashed absolute -inset-16 hidden md:block" />
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-2 shadow-2xl">
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#061812] p-2 shadow-2xl">
               <div className="relative overflow-hidden rounded-[1.5rem]">
                 <img
                   src={images.rooftop}
@@ -345,13 +332,13 @@ export default function Home() {
                   className="h-[430px] w-full object-cover transition duration-700 hover:scale-105 md:h-[540px]"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06110d]/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#03120e]/80 via-transparent to-transparent" />
 
-                {/* Floating Energy Card */}
-                <div className="glass-card absolute bottom-5 left-5 right-5 rounded-2xl p-4 md:left-6 md:right-auto md:w-72">
+                {/* Energy Card */}
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-[#061812]/85 p-4 backdrop-blur-xl md:left-6 md:right-auto md:w-72">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="font-mono text-[9px] uppercase tracking-widest text-emerald-300">
+                      <div className="font-mono text-[9px] uppercase tracking-widest text-[#b9ff68]">
                         Energy generated
                       </div>
 
@@ -363,7 +350,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#d9ff43] text-[#06110d]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#b9ff68] text-[#092016]">
                       <Zap size={20} fill="currentColor" />
                     </div>
                   </div>
@@ -372,7 +359,7 @@ export default function Home() {
             </div>
 
             {/* Sun */}
-            <div className="animate-sun-pulse absolute -right-5 -top-5 hidden h-16 w-16 items-center justify-center rounded-full bg-[#ffbd18] text-[#06110d] md:flex">
+            <div className="animate-sun-pulse absolute -right-5 -top-5 hidden h-16 w-16 items-center justify-center rounded-full bg-[#b9ff68] text-[#092016] md:flex">
               <Sun size={30} />
             </div>
           </motion.div>
@@ -382,11 +369,11 @@ export default function Home() {
       {/* ================= SOLUTIONS ================= */}
       <section
         id="solutions"
-        className="relative bg-[#f5f3eb] py-24 text-[#102d2a]"
+        className="relative bg-white py-24 text-[#092016]"
       >
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="mb-14 max-w-2xl">
-            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-emerald-700">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#092016]/60">
               01 / Solar Solutions
             </div>
 
@@ -396,7 +383,7 @@ export default function Home() {
               <span className="italic">for every scale.</span>
             </h2>
 
-            <p className="mt-5 max-w-xl leading-7 text-[#102d2a]/60">
+            <p className="mt-5 max-w-xl leading-7 text-[#092016]/65">
               From individual homes to massive solar farms, our systems are
               designed to make clean energy practical and accessible.
             </p>
@@ -405,9 +392,11 @@ export default function Home() {
           {/* Solution Cards */}
           <div className="grid gap-6 md:grid-cols-2">
             {/* Solar Home */}
-            <motion.article
+            <motion.a
+              href="/solutions"
               whileHover={{ y: -8 }}
-              className="group overflow-hidden rounded-[2rem] bg-[#113e36] text-white"
+              transition={{ duration: 0.25 }}
+              className="group block overflow-hidden rounded-[2rem] bg-[#071b15] text-white shadow-xl transition-shadow duration-300 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#b9ff68]"
             >
               <div className="relative h-80 overflow-hidden">
                 <img
@@ -416,10 +405,14 @@ export default function Home() {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#113e36] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#071b15] via-transparent to-transparent" />
 
-                <div className="absolute left-5 top-5 rounded-full bg-[#d9ff43] px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest text-[#06110d]">
+                <div className="absolute left-5 top-5 rounded-full bg-[#b9ff68] px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest text-[#092016]">
                   Residential
+                </div>
+
+                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#b9ff68] text-[#092016] opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <ArrowRight size={18} />
                 </div>
               </div>
 
@@ -429,7 +422,7 @@ export default function Home() {
                     Solar Home
                   </h3>
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition group-hover:border-[#b9ff68] group-hover:text-[#b9ff68]">
                     <ArrowRight size={18} />
                   </div>
                 </div>
@@ -439,17 +432,27 @@ export default function Home() {
                   intelligent monitoring and efficient energy storage.
                 </p>
 
-                <div className="mt-6 flex items-center gap-2 text-sm text-[#d9ff43]">
+                <div className="mt-6 flex items-center gap-2 text-sm text-[#b9ff68]">
                   <CheckCircle2 size={16} />
                   Reduce electricity costs
                 </div>
+
+                <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/40 transition group-hover:text-[#b9ff68]">
+                  Explore Solution
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </div>
               </div>
-            </motion.article>
+            </motion.a>
 
             {/* Solar Farm */}
-            <motion.article
+            <motion.a
+              href="/solutions"
               whileHover={{ y: -8 }}
-              className="group overflow-hidden rounded-[2rem] bg-[#102d2a] text-white"
+              transition={{ duration: 0.25 }}
+              className="group block overflow-hidden rounded-[2rem] bg-[#0a2419] text-white shadow-xl transition-shadow duration-300 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#b9ff68]"
             >
               <div className="relative h-80 overflow-hidden">
                 <img
@@ -458,10 +461,14 @@ export default function Home() {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#102d2a] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a2419] via-transparent to-transparent" />
 
-                <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest text-[#102d2a]">
+                <div className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest text-[#092016]">
                   Large Scale
+                </div>
+
+                <div className="absolute bottom-5 right-5 flex h-10 w-10 items-center justify-center rounded-full bg-[#b9ff68] text-[#092016] opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  <ArrowRight size={18} />
                 </div>
               </div>
 
@@ -471,7 +478,7 @@ export default function Home() {
                     Solar Farm
                   </h3>
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition group-hover:border-[#b9ff68] group-hover:text-[#b9ff68]">
                     <ArrowRight size={18} />
                   </div>
                 </div>
@@ -481,12 +488,20 @@ export default function Home() {
                   energy generation and long-term performance.
                 </p>
 
-                <div className="mt-6 flex items-center gap-2 text-sm text-emerald-300">
+                <div className="mt-6 flex items-center gap-2 text-sm text-[#b9ff68]">
                   <CheckCircle2 size={16} />
                   High-capacity generation
                 </div>
+
+                <div className="mt-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-white/40 transition group-hover:text-[#b9ff68]">
+                  Explore Solution
+                  <ArrowRight
+                    size={14}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                </div>
               </div>
-            </motion.article>
+            </motion.a>
           </div>
         </div>
       </section>
@@ -494,7 +509,7 @@ export default function Home() {
       {/* ================= TECHNOLOGY ================= */}
       <section
         id="technology"
-        className="solar-background bg-[#06110d] py-24"
+        className="solar-background bg-[#03120e] py-24"
       >
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -505,7 +520,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="absolute -inset-4 rounded-[2rem] bg-emerald-400/10 blur-2xl" />
+              <div className="absolute -inset-4 rounded-[2rem] bg-[#b9ff68]/10 blur-2xl" />
 
               <div className="relative overflow-hidden rounded-[2rem] border border-white/10">
                 <img
@@ -514,11 +529,11 @@ export default function Home() {
                   className="h-[500px] w-full object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#06110d]/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#03120e]/70 to-transparent" />
 
-                <div className="glass-card absolute bottom-5 left-5 right-5 rounded-2xl p-5">
+                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-[#061812]/85 p-5 backdrop-blur-xl">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#d9ff43] text-[#06110d]">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#b9ff68] text-[#092016]">
                       <Zap size={23} fill="currentColor" />
                     </div>
 
@@ -542,14 +557,14 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-emerald-300">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#b9ff68]">
                 02 / Technology
               </div>
 
               <h2 className="mt-4 font-display text-4xl leading-tight md:text-6xl">
                 Built around
                 <br />
-                <span className="italic text-[#d9ff43]">
+                <span className="italic text-[#b9ff68]">
                   your energy.
                 </span>
               </h2>
@@ -569,7 +584,7 @@ export default function Home() {
                       key={feature.title}
                       className="flex gap-5 border-b border-white/10 pb-7 last:border-0"
                     >
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-emerald-400/20 bg-emerald-400/5 text-emerald-300">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#b9ff68]/20 bg-[#b9ff68]/5 text-[#b9ff68]">
                         <Icon size={21} />
                       </div>
 
@@ -600,30 +615,28 @@ export default function Home() {
       {/* ================= IMPACT ================= */}
       <section
         id="impact"
-        className="bg-[#d9ff43] py-24 text-[#06110d]"
+        className="bg-[#b9ff68] py-24 text-[#092016]"
       >
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#102d2a]/60">
+              <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#092016]/60">
                 03 / Our Impact
               </div>
 
               <h2 className="mt-4 max-w-2xl font-display text-5xl leading-none md:text-7xl">
                 The future is
                 <br />
-                <span className="italic">
-                  already shining.
-                </span>
+                <span className="italic">already shining.</span>
               </h2>
 
-              <p className="mt-7 max-w-xl text-lg leading-8 text-[#102d2a]/70">
+              <p className="mt-7 max-w-xl text-lg leading-8 text-[#092016]/70">
                 Every solar panel installed is another step toward cleaner
                 energy, lower emissions and a more resilient energy future.
               </p>
 
               <div className="mt-9 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#102d2a] text-[#d9ff43]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#092016] text-[#b9ff68]">
                   <Leaf size={21} />
                 </div>
 
@@ -635,7 +648,7 @@ export default function Home() {
 
             {/* Impact Image */}
             <div className="relative">
-              <div className="overflow-hidden rounded-[2rem] border border-[#102d2a]/10">
+              <div className="overflow-hidden rounded-[2rem] border border-[#092016]/10">
                 <img
                   src={images.farm}
                   alt="Large scale solar farm"
@@ -643,8 +656,8 @@ export default function Home() {
                 />
               </div>
 
-              <div className="absolute -bottom-5 -left-5 rounded-2xl bg-[#102d2a] px-6 py-5 text-white shadow-2xl">
-                <div className="font-display text-3xl text-[#d9ff43]">
+              <div className="absolute -bottom-5 -left-5 rounded-2xl bg-[#092016] px-6 py-5 text-white shadow-2xl">
+                <div className="font-display text-3xl text-[#b9ff68]">
                   24/7
                 </div>
 
@@ -660,17 +673,17 @@ export default function Home() {
       {/* ================= CTA ================= */}
       <section
         id="contact"
-        className="relative bg-[#06110d] py-28"
+        className="relative bg-[#081f17] py-28"
       >
         <div className="mx-auto max-w-5xl px-5 text-center md:px-8">
-          <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-[#ffbd18] text-[#06110d] shadow-[0_0_60px_rgba(255,189,24,0.25)]">
+          <div className="mx-auto mb-7 flex h-16 w-16 items-center justify-center rounded-full bg-[#b9ff68] text-[#092016] shadow-[0_0_60px_rgba(185,255,104,0.2)]">
             <Sun size={30} />
           </div>
 
           <h2 className="font-display text-5xl leading-none md:text-7xl">
             Ready to make the
             <br />
-            <span className="italic text-[#d9ff43]">
+            <span className="italic text-[#b9ff68]">
               switch?
             </span>
           </h2>
@@ -683,7 +696,7 @@ export default function Home() {
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="/contact"
-              className="solar-button inline-flex items-center gap-2 rounded-full bg-[#d9ff43] px-7 py-4 font-semibold text-[#06110d]"
+              className="solar-button inline-flex items-center gap-2 rounded-full bg-[#b9ff68] px-7 py-4 font-semibold text-[#092016] transition hover:bg-[#5dff85]"
             >
               Talk To Us
               <ArrowRight size={18} />
@@ -700,26 +713,113 @@ export default function Home() {
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="border-t border-white/10 bg-[#06110d]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 md:flex-row md:items-center md:justify-between md:px-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d9ff43] text-[#06110d]">
-              <Sun size={19} />
+      <footer className="border-t border-white/10 bg-[#020d0a]">
+        <div className="mx-auto max-w-7xl px-5 py-10 md:px-8">
+          <div className="grid gap-10 md:grid-cols-4">
+            {/* Brand */}
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#b9ff68] text-[#092016]">
+                  <Sun size={19} />
+                </div>
+
+                <span className="font-display text-lg">
+                  SolarNova
+                </span>
+              </div>
+
+              <p className="mt-4 max-w-md text-sm leading-6 text-white/35">
+                Smart solar solutions for homes, businesses and large-scale
+                projects. Building a cleaner and more sustainable future.
+              </p>
+
+              <div className="mt-5 flex items-center gap-2 text-xs text-[#b9ff68]">
+                <span className="h-2 w-2 rounded-full bg-[#b9ff68]" />
+                Solar powered future
+              </div>
             </div>
 
-            <span className="font-display text-lg">
-              SolarNova
-            </span>
+            {/* Quick Links */}
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#b9ff68]">
+                Explore
+              </div>
+
+              <div className="mt-4 flex flex-col gap-3">
+                <a
+                  href="/solutions"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Solutions
+                </a>
+
+                <a
+                  href="/about"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  About
+                </a>
+
+                <a
+                  href="/about/board-of-directors"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Board of Directors
+                </a>
+
+                <a
+                  href="/about/awards"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Awards & Certification
+                </a>
+              </div>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#b9ff68]">
+                Resources
+              </div>
+
+              <div className="mt-4 flex flex-col gap-3">
+                <a
+                  href="/blog"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Blog
+                </a>
+
+                <a
+                  href="/contact"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Contact
+                </a>
+
+                <a
+                  href="/solutions"
+                  className="text-sm text-white/50 transition hover:text-[#b9ff68]"
+                >
+                  Solar Solutions
+                </a>
+              </div>
+            </div>
           </div>
 
-          <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} SolarNova. Clean energy for a brighter
-            future.
-          </p>
+          <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+            <p className="text-xs text-white/30">
+              © {new Date().getFullYear()} SolarNova. Clean energy for a
+              brighter future.
+            </p>
 
-          <div className="flex items-center gap-2 text-xs text-emerald-300">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-            Solar powered future
+            <a
+              href="/contact"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#b9ff68] transition hover:text-[#5dff85]"
+            >
+              Get Started
+              <ArrowRight size={14} />
+            </a>
           </div>
         </div>
       </footer>
