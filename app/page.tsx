@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -70,23 +71,29 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#06110d] text-white">
       {/* ================= NAVBAR ================= */}
       <header className="fixed left-0 right-0 top-0 z-50">
-        <div className="mx-auto max-w-7xl px-5 py-5 md:px-8">
-          <nav className="glass-card flex items-center justify-between rounded-2xl px-5 py-4">
+        <div className="mx-auto max-w-7xl px-4 py-4 sm:px-5 sm:py-5 md:px-8">
+          <nav
+            className={`glass-card relative z-[60] flex items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-300 sm:px-5 sm:py-4 ${
+              menuOpen
+                ? "border-emerald-400/20 bg-emerald-400/5 text-white backdrop-blur-xl"
+                : "bg-white/5"
+            }`}
+          >
             {/* Logo */}
             <button
               onClick={() => scrollTo("home")}
-              className="flex items-center gap-3"
+              className="flex min-w-0 items-center gap-2.5 sm:gap-3"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#d9ff43] text-[#06110d]">
-                <Sun size={23} strokeWidth={2.5} />
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#d9ff43] text-[#06110d] sm:h-10 sm:w-10">
+                <Sun size={21} strokeWidth={2.5} />
               </div>
 
-              <div>
-                <div className="font-display text-xl font-semibold tracking-tight">
+              <div className="min-w-0 text-left">
+                <div className="font-display text-lg font-semibold tracking-tight sm:text-xl">
                   SolarNova
                 </div>
 
-                <div className="font-mono text-[9px] uppercase tracking-[0.25em] text-emerald-300">
+                <div className="font-mono text-[8px] uppercase tracking-[0.2em] text-emerald-300 sm:text-[9px] sm:tracking-[0.25em]">
                   Clean Energy
                 </div>
               </div>
@@ -169,8 +176,13 @@ export default function Home() {
             {/* ================= MOBILE MENU BUTTON ================= */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 md:hidden"
+              className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 md:hidden ${
+                menuOpen
+                  ? "border-emerald-400/20 bg-emerald-400/10 text-[#d9ff43]"
+                  : "border-white/10 text-white"
+              }`}
               aria-label="Toggle menu"
+              aria-expanded={menuOpen}
             >
               {menuOpen ? <X size={21} /> : <Menu size={21} />}
             </button>
@@ -181,14 +193,15 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="glass-card mt-2 rounded-2xl p-4 md:hidden"
+              transition={{ duration: 0.2 }}
+              className="glass-card relative z-[55] mt-2 rounded-2xl border border-emerald-400/20 bg-emerald-400/5 p-3 shadow-2xl backdrop-blur-xl md:hidden sm:p-4"
             >
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5">
                 {/* Solutions */}
                 <a
                   href="/solutions"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
                 >
                   Solutions
                 </a>
@@ -197,7 +210,7 @@ export default function Home() {
                 <a
                   href="/about"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
                 >
                   About
                 </a>
@@ -206,7 +219,7 @@ export default function Home() {
                 <a
                   href="/about/board-of-directors"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
                 >
                   Board of Directors
                 </a>
@@ -215,7 +228,7 @@ export default function Home() {
                 <a
                   href="/about/awards"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
                 >
                   Awards & Certification
                 </a>
@@ -224,7 +237,7 @@ export default function Home() {
                 <a
                   href="/blog"
                   onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-emerald-400/10 hover:text-[#d9ff43]"
                 >
                   Blog
                 </a>
@@ -233,7 +246,7 @@ export default function Home() {
                 <a
                   href="/contact"
                   onClick={() => setMenuOpen(false)}
-                  className="mt-2 rounded-xl bg-[#d9ff43] px-4 py-3 font-semibold text-[#06110d]"
+                  className="mt-2 rounded-xl bg-[#d9ff43] px-4 py-3 text-center font-semibold text-[#06110d] transition hover:brightness-95"
                 >
                   Get Started
                 </a>
