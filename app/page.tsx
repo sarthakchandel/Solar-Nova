@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -93,30 +92,72 @@ export default function Home() {
               </div>
             </button>
 
-            {/* Desktop Navigation */}
+            {/* ================= DESKTOP NAVIGATION ================= */}
             <div className="hidden items-center gap-8 md:flex">
-              <button
-                onClick={() => scrollTo("solutions")}
+              {/* Solutions */}
+              <a
+                href="/solutions"
                 className="text-sm text-white/70 transition hover:text-[#d9ff43]"
               >
                 Solutions
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollTo("technology")}
+              {/* ================= ABOUT DROPDOWN ================= */}
+              <div className="group relative">
+                <a
+                  href="/about"
+                  className="flex items-center gap-1 text-sm text-white/70 transition hover:text-[#d9ff43]"
+                >
+                  About
+
+                  <span className="text-[9px] transition-transform duration-200 group-hover:rotate-180">
+                    ▼
+                  </span>
+                </a>
+
+                {/* Dropdown */}
+                <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 translate-y-2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="glass-card overflow-hidden rounded-2xl border border-white/10 bg-[#06110d]/95 p-2 shadow-2xl backdrop-blur-xl">
+                    {/* Board of Directors */}
+                    <a
+                      href="/about/board-of-directors"
+                      className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
+                    >
+                      <div className="text-sm font-semibold text-white">
+                        Board of Directors
+                      </div>
+
+                      <div className="mt-1 text-xs text-white/40">
+                        Meet our leadership
+                      </div>
+                    </a>
+
+                    {/* Awards */}
+                    <a
+                      href="/about/awards"
+                      className="block rounded-xl px-4 py-3 transition hover:bg-white/5"
+                    >
+                      <div className="text-sm font-semibold text-white">
+                        Awards & Certification
+                      </div>
+
+                      <div className="mt-1 text-xs text-white/40">
+                        Our achievements & recognition
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Blog */}
+              <a
+                href="/blog"
                 className="text-sm text-white/70 transition hover:text-[#d9ff43]"
               >
-                Technology
-              </button>
+                Blog
+              </a>
 
-              <button
-                onClick={() => scrollTo("impact")}
-                className="text-sm text-white/70 transition hover:text-[#d9ff43]"
-              >
-                Impact
-              </button>
-
-              {/* Get Started → Contact Page */}
+              {/* Contact */}
               <a
                 href="/contact"
                 className="rounded-full bg-[#d9ff43] px-5 py-2.5 text-sm font-semibold text-[#06110d] transition hover:-translate-y-0.5"
@@ -125,7 +166,7 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* ================= MOBILE MENU BUTTON ================= */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 md:hidden"
@@ -135,7 +176,7 @@ export default function Home() {
             </button>
           </nav>
 
-          {/* Mobile Menu */}
+          {/* ================= MOBILE MENU ================= */}
           {menuOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
@@ -143,30 +184,55 @@ export default function Home() {
               className="glass-card mt-2 rounded-2xl p-4 md:hidden"
             >
               <div className="flex flex-col gap-2">
-                <button
-                  onClick={() => scrollTo("solutions")}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 hover:bg-white/5"
+                {/* Solutions */}
+                <a
+                  href="/solutions"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-white/5 hover:text-[#d9ff43]"
                 >
                   Solutions
-                </button>
+                </a>
 
-                <button
-                  onClick={() => scrollTo("technology")}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 hover:bg-white/5"
+                {/* About */}
+                <a
+                  href="/about"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-white/5 hover:text-[#d9ff43]"
                 >
-                  Technology
-                </button>
+                  About
+                </a>
 
-                <button
-                  onClick={() => scrollTo("impact")}
-                  className="rounded-xl px-4 py-3 text-left text-white/80 hover:bg-white/5"
+                {/* Board of Directors */}
+                <a
+                  href="/about/board-of-directors"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-white/5 hover:text-[#d9ff43]"
                 >
-                  Impact
-                </button>
+                  Board of Directors
+                </a>
 
-                {/* Mobile Get Started → Contact Page */}
+                {/* Awards */}
+                <a
+                  href="/about/awards"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 pl-8 text-left text-sm text-white/60 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                >
+                  Awards & Certification
+                </a>
+
+                {/* Blog */}
+                <a
+                  href="/blog"
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-xl px-4 py-3 text-left text-white/80 transition hover:bg-white/5 hover:text-[#d9ff43]"
+                >
+                  Blog
+                </a>
+
+                {/* Contact */}
                 <a
                   href="/contact"
+                  onClick={() => setMenuOpen(false)}
                   className="mt-2 rounded-xl bg-[#d9ff43] px-4 py-3 font-semibold text-[#06110d]"
                 >
                   Get Started
@@ -182,7 +248,6 @@ export default function Home() {
         id="home"
         className="solar-background solar-grid relative flex min-h-screen items-center pt-32"
       >
-        {/* Background Glow */}
         <div className="pointer-events-none absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl" />
 
         <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 md:px-8 lg:grid-cols-2">
@@ -217,20 +282,20 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <button
-                onClick={() => scrollTo("solutions")}
+              <a
+                href="/solutions"
                 className="solar-button inline-flex items-center justify-center gap-2 rounded-full bg-[#d9ff43] px-6 py-3.5 font-semibold text-[#06110d]"
               >
                 Explore Solutions
                 <ArrowRight size={18} />
-              </button>
+              </a>
 
-              <button
-                onClick={() => scrollTo("technology")}
+              <a
+                href="/about"
                 className="solar-button inline-flex items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3.5 font-semibold backdrop-blur"
               >
-                Our Technology
-              </button>
+                About SolarNova
+              </a>
             </div>
 
             {/* Stats */}
@@ -603,8 +668,6 @@ export default function Home() {
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-
-            {/* Talk To Us → Contact Page */}
             <a
               href="/contact"
               className="solar-button inline-flex items-center gap-2 rounded-full bg-[#d9ff43] px-7 py-4 font-semibold text-[#06110d]"
